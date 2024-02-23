@@ -1,12 +1,13 @@
 let respostaFinal;
 let salvos;
+let maximo = 100
 novoJogo();
 
 function novoJogo(){
     
     document.getElementById('reiniciar').setAttribute('disabled', true);
     exibirNaTela('h1', 'Jogo do número secreto');
-    exibirNaTela('p', 'Escolha um número de 1 a 10');
+    exibirNaTela('p', `Escolha um número de 1 a ${maximo}`);
     limparInput()
 
     salvos = new Set();
@@ -64,7 +65,7 @@ function limparInput() {
 }
 
 function gerarNumeroAleatorio(){
-    return parseInt(Math.random() * 10 + 1);
+    return parseInt(Math.random() * maximo + 1);
 }
 
 function exibirNaTela(tag, texto){
